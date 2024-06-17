@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SARI-SARI STORE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<div class="navContainer">
+    <div class="nav">
+        <div>
+            <img class="logo_pic" src="logo.png" alt="logo">
+        </div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#JEANS">JEANS</a></li>
+                <li><a href="#T-SHIRT">T-SHIRT</a></li>
+                <li><a href="#PERFUME">PERFUME</a></li>
+                <li><a href="#SANDO">SANDO</a></li>
+                <li><a href="#TOYS">TOYS</a></li>
+            </ul>
+        </div>
+        <div class="cart-icon" onclick="toggleCart()">
+            <img src="bag.jpg" alt="Cart" width="30px">
+        </div>
+        
+        <div class="toggle-button" onclick="toggleNav()"> &#9776;
+           
+        </div>
+    </div>
+</div>
+
+<!-- Cart Sidebar -->
+<div id="cartSidebar" class="cart-sidebar">
+    <div class="cart-container">
+        <h2>Shopping Cart</h2>
+        <div id="cartItems" class="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+    </div>
+    <div class="cart-actions">
+        <hr>
+        <div class="cart-total">
+            <div class="total-title">Total</div>
+            <div id="cartTotalAmount" class="total-amount">$0.00</div>
+        </div>
+
+        <div class="discount">
+            <p><b>Discount</b>
+                <select id="user-type" onchange="updateTotal()" style="height: 50px; width: 90%;">
+                    <option value="normal">Normal</option>
+                    <option value="student">Student</option>
+                    <option value="senior">Senior</option>
+                    <option value="pwd">Person with Disability (PWD)</option>
+                </select>
+            </p>
+        </div>
+
+        <p><b>Cash Amount</b><br>
+            <input style="height: 50px; width: 90%;" type="number" id="cash-input" placeholder="Enter cash amount">
+        </p>
+        <button type="button" class="btn_button" onclick="calculateChange()">Calculate Change</button>
+    </div>
+</div>
+
+<!-- Product Grid -->
+<div class="item-list">
+    <div class="category" id="JEANS">JEANS</div>
+    <div class="item-grid">
+        <!-- Product Items -->
+        <div class="item" data-stock="0" data-id="1"> <!-- Example: Initial stock set to 10 -->
+            <img class="item-img" src="jeans1.jpg" alt="Product 1">
+            <div class="item-details">
+                <div class="item-name">Cotton Jeans</div>
+                <div class="item-price">$150</div>
+                <div class="item-stock">Stock: <span class="stock-count">10</span></div>
+                <div class="item-actions">
+                    
+                    <button class="restock-btn" onclick="restockItem(this)">Restock</button>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="item"  data-id="2">
+            <img class="item-img" src="Skinny Jeans Light Blue.jpg" alt="Product 2">
+            <div class="item-details">
+                <div class="item-name">Light-Blue-Jeans</div>
+                <div class="item-price">$180</div>
+                <div class="item-stock">Stock: <span class="stock-count">10</span></div>
+                <div class="item-actions">
+                   
+                    <button class="restock-btn" onclick="restockItem(this)">Restock</button>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="item" data-id="3">
+            <img class="item-img" src="high waisted skinny jeans.jpg" alt="Product 3">
+            <div class="item-details">
+                <div class="item-name">High Skinny Jeans</div>
+                <div class="item-price">$180</div>
+                <div class="item-stock">Stock: <span class="stock-count">10</span></div>
+                <div class="item-actions">
+                    <button class="restock-btn" onclick="restockItem(this)">Restock</button>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="item" data-id="4">
+            <img class="item-img" src="high rated mens jeans.jpg" alt="Product 4">
+            <div class="item-details">
+                <div class="item-name">High rated Jeans</div>
+                <div class="item-price">$200</div>
+                <div class="item-stock">Stock : <span class="stock-count">10</span></div>
+                <div class="item-actions">
+                    <button class="restock-btn" onclick="restockItem(this)">Restock</button>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="item-list">
+    <div class="category" id="T-SHIRT">T-SHIRT</div>
+    <div class="item-grid">
+        <!-- Product Items -->
+        <div class="item" data-stock="0" data-id="5"> <!-- Example: Initial stock set to 10 -->
+            <img class="item-img" src="t-shirt1.png" alt="Product 1">
+            <div class="item-details">
+                <div class="item-name">Cotton Grey T-Shirt</div>
+                <div class="item-price">$150</div>
+                <div class="item-stock">Stock: <span class="stock-count">10</span></div>
+                <div class="item-actions">
+                    
+                    <button class="restock-btn" onclick="restockItem(this)">Restock</button>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="item"  data-id="6">
+            <img class="item-img" src="scout.png" alt="Product 2">
+            <div class="item-details">
+                <div class="item-name">Light Blue Scout T-Shirt</div>
+                <div class="item-price">$120</div>
+                <div class="item-stock">Stock: <span class="stock-count">10</span></div>
+                <div class="item-actions">
+                   
+                    <button class="restock-btn" onclick="restockItem(this)">Restock</button>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="item" data-id="7">
+            <img class="item-img" src="royal blue.png" alt="Product 3">
+            <div class="item-details">
+                <div class="item-name">Royal Blue T-Shirt</div>
+                <div class="item-price">$150</div>
+                <div class="item-stock">Stock: <span class="stock-count">10</span></div>
+                <div class="item-actions">
+                    <button class="restock-btn" onclick="restockItem(this)">Restock</button>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="item" data-id="8">
+            <img class="item-img" src="black.png" alt="Product 4">
+            <div class="item-details">
+                <div class="item-name">Black T-Shirt</div>
+                <div class="item-price">$150</div>
+                <div class="item-stock">Stock : <span class="stock-count">10</span></div>
+                <div class="item-actions">
+                    <button class="restock-btn" onclick="restockItem(this)">Restock</button>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="item-list">
+    <div class="category" id="PERFUME">PERFUME</div>
+    <div class="item-grid">
+        <!-- Product Items -->
+        <div class="item" data-stock="0" data-id="9"> <!-- Example: Initial stock set to 10 -->
+            <img class="item-img" src="so inlove.jpg" alt="Product 1">
+            <div class="item-details">
+                <div class="item-name">So Inlove</div>
+                <div class="item-price">$140</div>
+                <div class="item-stock">Stock: <span class="stock-count">10</span></div>
+                <div class="item-actions">
+                    
+                    <button class="restock-btn" onclick="restockItem(this)">Restock</button>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="item"  data-id="10">
+            <img class="item-img" src="victory league.png" alt="Product 2">
+            <div class="item-details">
+                <div class="item-name">Adidas Victory League</div>
+                <div class="item-price">$200</div>
+                <div class="item-stock">Stock: <span class="stock-count">10</span></div>
+                <div class="item-actions">
+                   
+                    <button class="restock-btn" onclick="restockItem(this)">Restock</button>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="item" data-id="11">
+            <img class="item-img" src="penshope.jpg" alt="Product 3">
+            <div class="item-details">
+                <div class="item-name">Penshoppe Style Series</div>
+                <div class="item-price">$150</div>
+                <div class="item-stock">Stock: <span class="stock-count">10</span></div>
+                <div class="item-actions">
+                    <button class="restock-btn" onclick="restockItem(this)">Restock</button>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="item" data-id="12">
+            <img class="item-img" src="polo.png" alt="Product 4">
+            <div class="item-details">
+                <div class="item-name">Polo Perfume</div>
+                <div class="item-price">$170</div>
+                <div class="item-stock">Stock : <span class="stock-count">10</span></div>
+                <div class="item-actions">
+                    <button class="restock-btn" onclick="restockItem(this)">Restock</button>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<div class="item-list">
+    <div class="category" id="SANDO">SANDO</div>
+    <div class="item-grid">
+        <!-- Product Items -->
+        <div class="item" data-stock="0" data-id="13"> <!-- Example: Initial stock set to 10 -->
+            <img class="item-img" src="black-sando.jpg" alt="Product 1">
+            <div class="item-details">
+                <div class="item-name">Black-Sando</div>
+                <div class="item-price">$100</div>
+                <div class="item-stock">Stock: <span class="stock-count">10</span></div>
+                <div class="item-actions">
+                    
+                    <button class="restock-btn" onclick="restockItem(this)">Restock</button>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="item"  data-id="14">
+            <img class="item-img" src="red-sando.jpg" alt="Product 2">
+            <div class="item-details">
+                <div class="item-name">Red-Sando</div>
+                <div class="item-price">$150</div>
+                <div class="item-stock">Stock: <span class="stock-count">10</span></div>
+                <div class="item-actions">
+                   
+                    <button class="restock-btn" onclick="restockItem(this)">Restock</button>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="item" data-id="15">
+            <img class="item-img" src="Orange-Sando.jpg" alt="Product 3">
+            <div class="item-details">
+                <div class="item-name">Orange-Sando</div>
+                <div class="item-price">$90</div>
+                <div class="item-stock">Stock: <span class="stock-count">10</span></div>
+                <div class="item-actions">
+                    <button class="restock-btn" onclick="restockItem(this)">Restock</button>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="item" data-id="16">
+            <img class="item-img" src="Neon-Blue-Sando.jpg" alt="Product 4">
+            <div class="item-details">
+                <div class="item-name">Neon-Blue-Sando</div>
+                <div class="item-price">$120</div>
+                <div class="item-stock">Stock : <span class="stock-count">10</span></div>
+                <div class="item-actions">
+                    <button class="restock-btn" onclick="restockItem(this)">Restock</button>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+<div class="item-list">
+    <div class="category" id="TOYS">TOYS</div>
+    <div class="item-grid">
+        <!-- Product Items -->
+        <div class="item" data-stock="0" data-id="17"> <!-- Example: Initial stock set to 10 -->
+            <img class="item-img" src="rubiks.jpg" alt="Product 1">
+            <div class="item-details">
+                <div class="item-name">Rubiks</div>
+                <div class="item-price">$100</div>
+                <div class="item-stock">Stock: <span class="stock-count">10</span></div>
+                <div class="item-actions">
+                    
+                    <button class="restock-btn" onclick="restockItem(this)">Restock</button>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="item"  data-id="18">
+            <img class="item-img" src="TRUCK.jpg" alt="Product 2">
+            <div class="item-details">
+                <div class="item-name">Ford_Truck</div>
+                <div class="item-price">$120</div>
+                <div class="item-stock">Stock: <span class="stock-count">10</span></div>
+                <div class="item-actions">
+                   
+                    <button class="restock-btn" onclick="restockItem(this)">Restock</button>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="item" data-id="19">
+            <img class="item-img" src="dump truck.jpg" alt="Product 3">
+            <div class="item-details">
+                <div class="item-name">Dump-Truck</div>
+                <div class="item-price">$180</div>
+                <div class="item-stock">Stock: <span class="stock-count">10</span></div>
+                <div class="item-actions">
+                    <button class="restock-btn" onclick="restockItem(this)">Restock</button>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="item" data-id="20">
+            <img class="item-img" src="Bear.jpg" alt="Product 4">
+            <div class="item-details">
+                <div class="item-name">Bear</div>
+                <div class="item-price">$240</div>
+                <div class="item-stock">Stock : <span class="stock-count">10</span></div>
+                <div class="item-actions">
+                    <button class="restock-btn" onclick="restockItem(this)">Restock</button>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="navToggleContainer" class="navToggleContainer">
+    <div class="nav">
+       
+        <div>
+            <ul class="nav-links">
+                <li><a href="#JEANS">JEANS</a></li>
+                <li><a href="#T-SHIRT">T-SHIRT</a></li>
+                <li><a href="#PERFUME">PERFUME</a></li>
+                <li><a href="#SANDO">SANDO</a></li>
+                <li><a href="#TOYS">TOYS</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="restockModal" class="modal">
+    <div class="modal-content">
+       
+        <h2>Restock Item</h2>
+        <p>Please enter the quantity to restock:</p>
+        <input type="number" id="restockQuantity" min="1" value="1" style="height: 30px;">
+        <button onclick="confirmRestock()" class="stock">Restock</button>
+        <button onclick="closeModal()"class="close">Cancel</button>
+    </div>
+</div>
+
+<script src="action.js"></script>
+
+</body>
+</html>

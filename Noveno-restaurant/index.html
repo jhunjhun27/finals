@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 , user-scalable=no" >
+    <link rel = "stylesheet" href="style.css">
+    <title>Project</title>
+  
+</head>
+<body>
+  
+     <div class="Main">
+          <div class="wrapper">
+           <div class = "header">
+               <nav>
+           <div class="logo">
+            <b href="">RESTO </a>
+           </div>
+        <ul>
+    <a href="#maindish"><li>MAIN DISH</li></a>
+    <a href="#vegetable"><li>VEGETABLE</li></a>
+    <a href="#dessert"><li>DESSERT</li></a>
+    <a href="#drinks"><li>DRINKS</li></a>
+    <a href="#add on"><li>ADD ON</li></a>
+   <li><img src="img/bag.jpg" id="bag-icon" ></li>
+    <!--<img src="orders_icon.jpg" alt = "order"> -->
+      </ul>
+      <div class="toggle">&#9776;</div> 
+      </nav>
+  <div class="content">
+   <h1>WELCOME  TO RESTO</h1>   <P> MALIGAYANG PAGDATING SA AMING RESTORAN! 
+    HANDANG IBIGAY ANG BAGONG LUTONG PAGKAIN 
+    TIYAK UBOS ANG IYONG PERA SA SARAP NG MGA PAGKAIN</P>
+   
+         </div>
+      </div>
+</div>
+<div class="cart-section" id="cart">
+    <!-- Cart content goes here -->
+
+    <!--ORDER CART-->
+      <div class="order_cart">
+        <h2 class="order_title">Your Order</h2>
+
+        <div class="order_content">
+       </div>
+           
+       <!--total-->
+        <div class="total">
+            
+             <div class="total_title">Total</div>
+             <div class="total_price">$0</div>
+       
+         </div>
+          <div class="discount">
+            <p>Discount
+              <select id="user-type" onchange="updateTotal()" style="height: 50px; width: 90%;">
+            <option value="normal">Normal</option>
+            <option value="student">Student</option>
+            <option value="senior">Senior</option>
+            <option value="pwd">Person with Disability (PWD)</option>
+              </select>
+            </p>
+            </div>
+            <p> Cash <br>
+            <input  style = "height: 50px; width: 90%;" type="number" id="cash-input" placeholder="Enter cash amount">  
+             </p>
+            <button type = "button" class="btn_button" onclick="calculateChange()">Calculate Change</button>
+         
+         
+          
+
+         
+        </div>
+
+    </div>
+
+       
+       
+
+
+
+
+
+    <section class="main_menu">
+
+        <h2 class="section-title" id="maindish">MAIN DISH </h2>
+     <div class="box-container">
+        <!-- box1 -->
+        <div class = "box">
+            <img src="img/adobo.jpg" alt=""  class="picture" >
+            <h2 class="title">ADOBO </h2>
+            <span class = "price"> $100</span>
+            
+            <button type="button" class="btn_addtoorder">Add to Cart</button>
+         
+        </div>
+
+        <div class = "box">
+            <img src="img/Bulalo.jpg" alt=""  class="picture" >
+            <h2 class="title">BULALO </h2>
+            <span class = "price"> $150</span>
+            
+                <button type="button" class="btn_addtoorder">Add to Cart</button>
+        </div>
+
+        <div class = "box">
+            <img src="img/sinigang.jpg" alt=""   class="picture">
+            <h2 class="title">SINIGANG</h2>
+            <span class = "price"> $120</span>
+            
+                <button type="button" class="btn_addtoorder">Add to Cart</button>
+
+        </div>
+
+                <div class = "box">
+                    <img src="img/andoks.jpg" alt=""   class="picture">
+                    <h2 class="title">ANDOKS </h2>
+                    <span class = "price"> $150</span>
+                    
+                        <button type="button" class="btn_addtoorder">Add to Cart</button>
+                 
+                </div>
+
+                <div class = "box">
+                    <img src="img/menudo.jpg" alt=""   class="picture">
+                    <h2 class="title">MENUDO </h2>
+                    <span class = "price"> $130</span>
+                    
+                        <button type="button" class="btn_addtoorder">Add to Cart</button>
+                </div>
+                        <div class = "box">
+                            <img src="img/tinola.jpg" alt=""   class="picture">
+                            <h2 class="title">TINOLA </h2>
+                            <span class = "price"> $100</span>
+                            
+                                <button type="button" class="btn_addtoorder">Add to Cart</button>
+                         
+                        </div>
+    </div>
+       <h2 class="section-title" id="vegetable">VEGETABLE </h2>
+       <div class="box-container">
+        <!-- box2 -->
+        <div class = "box">
+            <img src="img/pakbet.JPG" alt=""  class="picture" >
+            <h2 class="title">PAKBET </h2>
+            <span class = "price"> $90</span>
+            
+            <button type="button" class="btn_addtoorder">Add to Cart</button>
+         
+        </div>
+
+        <div class = "box">
+            <img src="img/ginisang upo.jpg" alt=""   class="picture">
+            <h2 class="title">GINISANG UPO </h2>
+            <span class = "price"> $50</span>
+            
+                <button type="button" class="btn_addtoorder">Add to Cart</button>
+        </div>
+
+        <div class = "box">
+            <img src="img/salad.jpg" alt=""   class="picture">
+            <h2 class="title">VEGETABLE SALAD</h2>
+            <span class = "price"> $130</span>
+            
+                <button type="button" class="btn_addtoorder">Add to Cart</button>
+
+        </div>
+
+                <div class = "box">
+                    <img src="img/CHOPSEUY.jpg" alt=""  class="picture">
+                    <h2 class="title">CHOPSEUY </h2>
+                    <span class = "price"> $150</span>
+                    
+                        <button type="button" class="btn_addtoorder">Add to Cart</button>
+                 
+                </div>
+
+                <div class = "box">
+                    <img src="img/GINISANG KALABASA.jpg" alt=""  class="picture" >
+                    <h2 class="title" style="font-size: 25px; font-weight: 600;">GINISANG KALABASA </h2>
+                    <span class = "price"> $100</span>
+                    
+                        <button type="button" class="btn_addtoorder">Add to Cart</button>
+                </div>
+                        <div class = "box">
+                            <img src="img/MUNGGO.jpg" alt=""   class="picture">
+                            <h2 class="title">MUNGGO</h2>
+                            <span class = "price"> $90</span>
+                            
+                                <button type="button" class="btn_addtoorder">Add to Cart</button>
+                         
+                        </div>
+    </div>
+   
+    <h2 class="section-title" id="dessert">DESSERT</h2>
+    <div class="box-container">
+       
+        <!-- box3 -->
+        <div class = "box">
+            <img src="img/ice cream.jpg" alt=""   class="picture">
+            <h2 class="title">ICE CREAM</h2>
+            <span class = "price"> $130</span>
+            
+            <button type="button" class="btn_addtoorder">Add to Cart</button>
+         
+        </div>
+
+        <div class = "box">
+            <img src="img/leche plan.jpg" alt=""   class="picture">
+            <h2 class="title">LECHE-PLAN </h2>
+            <span class = "price"> $120</span>
+            
+                <button type="button" class="btn_addtoorder">Add to Cart</button>
+        </div>
+
+        <div class = "box">
+            <img src="img/cake.jpg" alt=""  class="picture" >
+            <h2 class="title">CHOCOLATE CAKE</h2>
+            <span class = "price"> $80</span>
+            
+                <button type="button" class="btn_addtoorder">Add to Cart</button>
+
+        </div>
+
+                <div class = "box">
+                    <img src="img/halo.jpg" alt=""   class="picture">
+                    <h2 class="title">HALO-HALO </h2>
+                    <span class = "price"> $100</span>
+                    
+                        <button type="button" class="btn_addtoorder">Add to Cart</button>
+                 
+                </div>
+
+                <div class = "box">
+                    <img src="img/MAIS CON YELO.jpg" alt=""  class="picture" >
+                    <h2 class="title" style="font-size: 25px; font-weight: 600;">MAIS CON YELO</h2>
+                    <span class = "price"> $110</span>
+                    
+                        <button type="button" class="btn_addtoorder">Add to Cart</button>
+                </div>
+                        <div class = "box">
+                            <img src="img/UBE HALAYA.jpg" alt=""  class="picture" >
+                            <h2 class="title">UBE HALAYA</h2>
+                            <span class = "price"> $90</span>
+                            
+                                <button type="button" class="btn_addtoorder">Add to Cart</button>
+                         
+                        </div>
+    </div>
+
+
+    <h2 class="section-title" id="drinks">DRINKS</h2>
+    <div class="box-container">
+       
+        <!-- box4 -->
+        <div class = "box">
+            <img src="img/COKE.jpg" alt=""   class="picture">
+            <h2 class="title">COKE</h2>
+            <span class = "price"> $80</span>
+            
+            <button type="button" class="btn_addtoorder">Add to Cart</button>
+         
+        </div>
+
+        <div class = "box">
+            <img src="img/ROYAL.jpg" alt=""  class="picture" >
+            <h2 class="title">ROYAL </h2>
+            <span class = "price"> $80</span>
+            
+                <button type="button" class="btn_addtoorder">Add to Cart</button>
+        </div>
+
+        <div class = "box">
+            <img src="img/SPRITE.jpg" alt=""   class="picture">
+            <h2 class="title">SPRITE</h2>
+            <span class = "price"> $70</span>
+            
+                <button type="button" class="btn_addtoorder">Add to Cart</button>
+
+        </div>
+
+    </div>
+
+        <h2 class="section-title" id="add on">ADD ON</h2>
+        <div class="box-container">
+           
+            <!-- box5 -->
+            <div class = "box">
+                <img src="img/soup.jpg" alt=""  class="picture" >
+                <h2 class="title">SOUP</h2>
+                <span class = "price"> $0</span>
+                
+                <button type="button" class="btn_addtoorder">Add to Cart</button>
+             
+            </div>
+    
+            <div class = "box">
+                <img src="img/CALAMANSI.jpg" alt=""  class="picture" >
+                <h2 class="title">CALAMANSI</h2>
+                <span class = "price"> $10</span>
+                
+                    <button type="button" class="btn_addtoorder">Add to Cart</button>
+            </div>
+    
+            <div class = "box">
+                <img src="img/SILI.jpg" alt=""  class="picture" >
+                <h2 class="title">SILI</h2>
+                <span class = "price"> $20</span>
+                
+                    <button type="button" class="btn_addtoorder" onclick = "addtocart ()">Add to Cart</button>
+    
+            </div>
+    
+</section >
+  
+<script 
+   src="noveno.js" async> 
+</script>
+
+</body>
+</html>
