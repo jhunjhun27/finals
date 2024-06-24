@@ -1,45 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>finals</title>
-<link rel = "stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finals</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-
-<div class="container">
-  <div class="title">Activity Compilation</div>
-  
-  <div class="card-container">
-    <a href="Noveno_finals_Activity1/JhunjhunNoveno_bootstrap.html" class="card" style="background-image: url('resume.png');">
-      <div class="card-content">
-        <h2 class="card-title">RESUME</h2>
-       
-      </div>
-    </a>
-
-    <a href="Noveno_Jhun Jhun_ROG/Noveno.html" class="card" style="background-image: url('rog.png');">
-      <div class="card-content">
-        <h2 class="card-title">cor</h2>
-       
-      </div>
-    </a>
-
-    <a href="Noveno-restaurant/index.html" class="card" style="background-image: url('restaurant1.png');">
-      <div class="card-content">
-        <h2 class="card-title">restaurant</h2>
-    </div>
-    </a>
-
-    <a href="Noveno_JhunJhun - sari-sari store/index.html" class="card" style="background-image: url('sari-sari store.png');">
-      <div class="card-content">
-        <h2 class="card-title">sari-sari store</h2>
+    <div class="container" id="mainContent">
+        <!-- Movie Details Container -->
+        <div class="details-container" id="DetailsContainer">
+            <h1>Activity Compilation</h1>
+            <div class="details" id="Details">
+                <h3 id="Title">Title</h3>
+                <p id="Description" class="description">Description</p>
+                <button id="seeMoreButton">See More</button>
+            </div>
+        </div>
         
-      </div>
-    </a>
-  </div>
-</div>
+        <div class="bottom-navigation">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" data-image="resume.png" data-title="Resume" data-description="Click the button below to know more about Jhun Jhun Noveno." data-href="Noveno_finals_Activity1/JhunjhunNoveno_bootstrap.html">
+                        <img src="resume.png" alt="Resume">
+                    </div>
+                    <div class="swiper-slide" data-image="restaurant1.png" data-title="Restaurant" data-description="An exciting project involving a restaurant's menu and services." data-href="Noveno-restaurant/index.html">
+                        <img src="restaurant1.png" alt="Restaurant 1">
+                    </div>
+                    <div class="swiper-slide" data-image="rog.png" data-title="Certificate of Registration" data-description="Description about the COR project with intricate details." data-href="Noveno_Jhun Jhun_ROG/Noveno.html">
+                        <img src="rog.png" alt="Rog">
+                    </div>
+                    <div class="swiper-slide" data-image="sari-sari.png" data-title="Sari-Sari Store" data-description="Project overview for Sari-Sari Store showcasing its unique features." data-href="Noveno_JhunJhun - sari-sari store/index.html">
+                        <img src="sari-sari.png" alt="Sari-Sari">
+                    </div>
+                </div>
+                <!-- Pagination dots -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
 
-</body>
+   
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="action.js"></script> 
 </html>
